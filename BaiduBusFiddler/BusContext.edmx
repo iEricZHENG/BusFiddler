@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BusModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="node_baidu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="routeid" Type="int" Nullable="false" />
+          <Property Name="x" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="y" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="note" Type="text" />
+        </EntityType>
+        <EntityType Name="node_tencent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="routeid" Type="int" Nullable="false" />
+          <Property Name="x" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="y" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="note" Type="text" />
+        </EntityType>
+        <EntityType Name="node_tianditu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="routeid" Type="int" Nullable="false" />
+          <Property Name="x" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="y" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="note" Type="text" />
+        </EntityType>
+        <EntityType Name="route_baidu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="text" />
+          <Property Name="describe" Type="text" />
+          <Property Name="line_direction" Type="text" />
+        </EntityType>
+        <EntityType Name="route_tencent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="text" />
+          <Property Name="describe" Type="text" />
+          <Property Name="line_direction" Type="text" />
+        </EntityType>
+        <EntityType Name="route_tianditu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="text" />
+          <Property Name="describe" Type="text" />
+          <Property Name="line_direction" Type="text" />
+        </EntityType>
+        <EntityType Name="station_baidu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="routeid" Type="int" Nullable="false" />
+          <Property Name="x" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="y" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+          <Property Name="note" Type="text" />
+        </EntityType>
+        <EntityType Name="station_tencent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="routeid" Type="int" Nullable="false" />
+          <Property Name="x" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="y" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+          <Property Name="note" Type="text" />
+        </EntityType>
+        <EntityType Name="station_tianditu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="routeid" Type="int" Nullable="false" />
+          <Property Name="x" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="y" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+          <Property Name="note" Type="text" />
+        </EntityType>
+        <EntityContainer Name="BusModelStoreContainer">
+          <EntitySet Name="node_baidu" EntityType="Self.node_baidu" Schema="bus" store:Type="Tables" />
+          <EntitySet Name="node_tencent" EntityType="Self.node_tencent" Schema="bus" store:Type="Tables" />
+          <EntitySet Name="node_tianditu" EntityType="Self.node_tianditu" Schema="bus" store:Type="Tables" />
+          <EntitySet Name="route_baidu" EntityType="Self.route_baidu" Schema="bus" store:Type="Tables" />
+          <EntitySet Name="route_tencent" EntityType="Self.route_tencent" Schema="bus" store:Type="Tables" />
+          <EntitySet Name="route_tianditu" EntityType="Self.route_tianditu" Schema="bus" store:Type="Tables" />
+          <EntitySet Name="station_baidu" EntityType="Self.station_baidu" Schema="bus" store:Type="Tables" />
+          <EntitySet Name="station_tencent" EntityType="Self.station_tencent" Schema="bus" store:Type="Tables" />
+          <EntitySet Name="station_tianditu" EntityType="Self.station_tianditu" Schema="bus" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BusModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="node_baidu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="routeid" Type="Int32" Nullable="false" />
+          <Property Name="x" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="y" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="node_tencent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="routeid" Type="Int32" Nullable="false" />
+          <Property Name="x" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="y" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="node_tianditu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="routeid" Type="Int32" Nullable="false" />
+          <Property Name="x" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="y" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="route_baidu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="describe" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="line_direction" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="route_tencent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="describe" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="line_direction" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="route_tianditu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="describe" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="line_direction" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="station_baidu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="routeid" Type="Int32" Nullable="false" />
+          <Property Name="x" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="y" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="station_tencent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="routeid" Type="Int32" Nullable="false" />
+          <Property Name="x" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="y" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="station_tianditu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="routeid" Type="Int32" Nullable="false" />
+          <Property Name="x" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="y" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BusEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="node_baidu" EntityType="Self.node_baidu" />
+          <EntitySet Name="node_tencent" EntityType="Self.node_tencent" />
+          <EntitySet Name="node_tianditu" EntityType="Self.node_tianditu" />
+          <EntitySet Name="route_baidu" EntityType="Self.route_baidu" />
+          <EntitySet Name="route_tencent" EntityType="Self.route_tencent" />
+          <EntitySet Name="route_tianditu" EntityType="Self.route_tianditu" />
+          <EntitySet Name="station_baidu" EntityType="Self.station_baidu" />
+          <EntitySet Name="station_tencent" EntityType="Self.station_tencent" />
+          <EntitySet Name="station_tianditu" EntityType="Self.station_tianditu" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BusModelStoreContainer" CdmEntityContainer="BusEntities">
+          <EntitySetMapping Name="node_baidu">
+            <EntityTypeMapping TypeName="BusModel.node_baidu">
+              <MappingFragment StoreEntitySet="node_baidu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="routeid" ColumnName="routeid" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="node_tencent">
+            <EntityTypeMapping TypeName="BusModel.node_tencent">
+              <MappingFragment StoreEntitySet="node_tencent">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="routeid" ColumnName="routeid" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="node_tianditu">
+            <EntityTypeMapping TypeName="BusModel.node_tianditu">
+              <MappingFragment StoreEntitySet="node_tianditu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="routeid" ColumnName="routeid" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="route_baidu">
+            <EntityTypeMapping TypeName="BusModel.route_baidu">
+              <MappingFragment StoreEntitySet="route_baidu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="line_direction" ColumnName="line_direction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="route_tencent">
+            <EntityTypeMapping TypeName="BusModel.route_tencent">
+              <MappingFragment StoreEntitySet="route_tencent">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="line_direction" ColumnName="line_direction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="route_tianditu">
+            <EntityTypeMapping TypeName="BusModel.route_tianditu">
+              <MappingFragment StoreEntitySet="route_tianditu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="line_direction" ColumnName="line_direction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="station_baidu">
+            <EntityTypeMapping TypeName="BusModel.station_baidu">
+              <MappingFragment StoreEntitySet="station_baidu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="routeid" ColumnName="routeid" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="station_tencent">
+            <EntityTypeMapping TypeName="BusModel.station_tencent">
+              <MappingFragment StoreEntitySet="station_tencent">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="routeid" ColumnName="routeid" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="station_tianditu">
+            <EntityTypeMapping TypeName="BusModel.station_tianditu">
+              <MappingFragment StoreEntitySet="station_tianditu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="routeid" ColumnName="routeid" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
